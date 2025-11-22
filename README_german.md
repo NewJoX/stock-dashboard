@@ -143,3 +143,108 @@ stock-dashboard/
 └─ LICENSE
 
 
+🚀 Lokale Installation & Start
+1. Repository klonen
+git clone https://github.com/NewJoX/stock-dashboard.git
+cd stock-dashboard
+
+2. Python-Abhängigkeiten installieren
+pip install flask yfinance
+
+
+Optional: virtuelle Umgebung verwenden (empfohlen).
+
+3. Fake-Daten generieren (optional)
+python generate_fake_portfolio.py
+
+
+Dies erzeugt einen stocks/ Ordner mit 30+ Fake-Aktien.
+
+4. Flask-Server starten
+python server.py
+
+
+Standardmäßig läuft der Server dann unter:
+
+http://127.0.0.1:5000
+
+5. Dashboard öffnen
+
+Im Browser:
+
+http://127.0.0.1:5000 → Haupt-Dashboard
+
+Klick auf eine Karte → stock.html?file=XYZ → Detailseite
+
+🌐 GitHub Pages (statische Demo)
+
+Wenn du eine statische Demo mit Fake-Daten veröffentlichen möchtest (ohne Backend):
+
+Sorge dafür, dass index.html, styles.css, app.js, stock.html, stock.js, dashboard_data.js und stocks/ mit Fake-Daten im Repo sind.
+
+Gehe in GitHub in dein Repo → Settings → Pages
+
+Wähle:
+
+Source: Deploy from a branch
+
+Branch: main
+
+Folder: / (root)
+
+Speichern.
+
+GitHub Pages wird daraus eine statische Version unter z. B.:
+
+https://newjox.github.io/stock-dashboard/
+
+
+bauen, die mit dashboard_data.js+stocks/ arbeitet.
+Flask-Funktionen wie /api/add_stock stehen dort nicht zur Verfügung, sind aber lokal nutzbar.
+
+🧪 Entwicklung
+
+Frontend lässt sich komplett mit Fake-JSONs testen (stocks/ + dashboard_data.js)
+
+Backend-Routen (z. B. /api/refresh, /api/add_stock) können schrittweise erweitert werden.
+
+Ideal für:
+
+Experimente mit weiteren KPIs
+
+andere Visualisierungen
+
+Multi-User-Support
+
+andere Datenquellen
+
+🗺️ Roadmap / Ideen
+
+Mögliche Erweiterungen:
+
+Benutzer-Login & eigene Portfolios
+
+Export/Import als CSV/JSON
+
+Weitere KPIs (Sharpe-Ratio, Drawdowns, etc.)
+
+Multi-Language Toggle im UI (DE/EN)
+
+Light-Mode Theme
+
+WebSockets/Live-Updates
+
+📝 Lizenz
+
+Dieses Projekt steht unter der MIT License – siehe LICENSE
+.
+
+Kurzfassung:
+
+Du darfst den Code frei nutzen, ändern, teilen – auch kommerziell.
+
+Es gibt keine Garantie / Haftung.
+
+👤 Autor
+
+GitHub: @NewJoX
